@@ -1,42 +1,20 @@
 {
-  "pages":[
-    "pages/index/index",
-    "pages/category/index",
-    "pages/my/index",
-    "pages/detail/index",
-    "pages/about/index",
-    "pages/share/index",
-    "pages/collect/index",
-    "pages/new/index"
-  ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
-  },
-  "tabBar": {
-    "selectedColor": "#1296db",
-    "color": "#909090",
-    "list": [
-      {
-        "text": "首页",
-        "iconPath": "images/home.png",
-        "selectedIconPath": "images/home-selected.png",
-        "pagePath": "pages/index/index"
-      },
-      {
-        "text": "专题",
-        "iconPath": "images/category.png",
-        "selectedIconPath": "images/category-selected.png",
-        "pagePath": "pages/category/index"
-      },
-      {
-        "text": "我的",
-        "iconPath": "images/my.png",
-        "selectedIconPath": "images/my-selected.png",
-        "pagePath": "pages/my/index"
-      }
-    ]
-  }
+    "pages": [
+        "pages/index/index",
+        "pages/post/post",
+        "pages/poster/poster"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "爱敲代码的猫",
+        "navigationBarTextStyle": "white",
+        "navigationStyle": "custom"
+    },
+    "plugins": {
+        "htmltowxml": {
+            "version": "1.3.1",
+            "provider": "wxa51b9c855ae38f3c"
+        }
+    }
 }

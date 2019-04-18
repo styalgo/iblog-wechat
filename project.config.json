@@ -9,12 +9,13 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false
+		"autoAudits": false,
+		"uglifyFileName": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.6.5",
-	"appid": "wx5149511e20e556f3",
-	"projectname": "iblog-wechat",
+	"libVersion": "2.4.3",
+	"appid": "wx8ac49c089bc5a457",
+	"projectname": "WeHalo",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

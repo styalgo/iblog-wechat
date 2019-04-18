@@ -1,32 +1,73 @@
 <!--index.wxml-->
-<view class="container">
-  <!--加载中-->
-  <i-spin fix wx:if="{{loading}}"></i-spin>
+<!-- 蒙版效果 -->
+<view class="mask" hidden="{{aflag}}" catchtap="closeMask">
+    <view class="masks" catchtap="prevent" animation="{{ani}}">
+        <view class="box">
+            <image class="leftImage" mode="widthFix" src="https://blog.eunji.cn/upload/2018/11/微信图片_2018122511545020181225115902899.png"></image>
+            <view class="right">
+                <view class="title">
+                    <text class="name">iBlog</text>
+                </view>
+                <view class="info">
+                    <view class="field">Email</view>
+                    <view class="value">Aquanlerou@eunji.cn</view>
+                    <view class="field">Github</view>
+                    <view class="value">https://github.com/aquanlerou</view>
+                </view>
+            </view>
+        </view>
 
-  <!--articles-->
-  <view class="post-card" wx:for="{{articles}}" wx:key="postId" animation="{{anp}}">
-    <!-- Navigator页面跳转 -->
-    <navigator url="/pages/detail/index?id={{item.cid}}">
-      <view class="post-card-image-link">
-        <image class="img" lazy-load="true" mode="widthFix" src="{{coverBaseUrl}}{{item.cid%20}}.jpg"></image>
-      </view>
-      <view class="post-card-content">
-        <view style="margin-left: 10px; color: #cccccc;">
-          <!-- <i-tag wx:for="{{item.tags}}" wx:key="tagId" type="border" style="margin-right: 5px;">
-                        {{item.tagName}}
-                    </i-tag> -->
-        </view>
-        <view class="title">{{item.title}}</view>
-        <view class="summary">这里放摘录...</view>
-        
-        <view class="footer">
-          <view class="postDate"><i-icon type="addressbook" color='#738a94' size='16'/><text class='author'>zihua</text></view>
-          
-          <view class="postDate"><i-icon type="browse" color='#738a94' size='18' /><text class='author'>{{item.hits}}</text></view>
-          <view class="postDate"><i-icon type="time" color='#738a94' size='16' /><text class='author'>2019-03-21 19:52</text></view>
-        </view>
-      </view>
-    </navigator>
-  </view>
+    </view>
 </view>
-<i-load-more  tip="{{bottomWord}}" loading="{{loadMore}}" hidden="{{loadMores}}"/>
+
+
+<view class="container" >
+
+    <!-- loading...加载 -->
+    <i-spin fix wx:if="{{spinShow}}"></i-spin>
+
+    <!-- 首页图片 -->
+    <view class="top">
+        <view class="aquanblog">
+            {{blogName}}
+            <view class="aquanblogs">{{jinrishici}}</view>
+        </view>
+        <view bindtap="showMask" class='qrcode'></view>
+    </view>
+
+    <view class="nav" hidden="{{nav}}">
+        <view class="nav-text">爱敲代码的猫</view>
+        <view bindtap="showMask" class='qrcode nav-qrcode'></view>
+    </view>
+
+    <!-- Posts -->
+    <view class="post-card" wx:for="{{posts}}" wx:key="postId" animation="{{anp}}">
+        <!-- Navigator页面跳转 -->
+        <navigator url="../post/post?postId={{item.cid}}">
+            <view class="post-card-image-link">
+                <image class="img" lazy-load="true" mode="widthFix" src="{{imageUrl}}{{item.cid % 18 + 1 }}.jpg"></image>
+            </view>
+            <view class="post-card-content">
+                <view style="margin-left: 10px; color: #cccccc;">
+                    <i-tag wx:if="{{!item.tags}}" type="border" style="margin-right: 5px;">
+                        暂无分类
+                    </i-tag>
+                    <i-tag wx:if="{{item.tags}}" type="border" style="margin-right: 5px;">
+                        {{item.tags}}
+                    </i-tag>
+                </view>
+                <view class="title">{{item.title}}</view>
+                <view class="summary">内容详情简介</view>
+                <view class="footer">
+                    <i-avatar src="{{userAvatar}}" size="small"></i-avatar>
+                    <view class="postDate">{{item.created}}</view>
+                </view>
+            </view>
+        </navigator>
+    </view>
+    <i-message id="message" />
+</view>
+
+
+<i-load-more tip="{{Author}}" loading="{{loadMore}}" hidden="{{loadMores}}"/>
+

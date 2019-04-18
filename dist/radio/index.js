@@ -28,10 +28,6 @@ Component({
             type: String,
             value: 'left', //left right
             observer: 'setPosition'
-        },
-        setClass: {
-          type: Boolean,
-          value: false
         }
     },
     data: {

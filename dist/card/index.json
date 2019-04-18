@@ -1,6 +1,3 @@
 {
-  "component": true,
-  "usingComponents": {
-      "i-avatar": "../../dist/avatar/index"
-  }
+  "component": true
 }

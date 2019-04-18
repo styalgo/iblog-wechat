@@ -1,13 +1,12 @@
 {
     "usingComponents": {
-        "i-card": "../../dist/card/index",
-        "i-avatar": "../../dist/avatar/index",
+        "htmltowxml": "plugin://htmltowxml/view",
         "i-spin": "../../dist/spin/index",
         "i-tag": "../../dist/tag/index",
+        "i-icon": "../../dist/icon/index",
         "i-divider": "../../dist/divider/index",
-        "i-load-more": "../../dist/load-more/index",
         "i-message": "../../dist/message/index"
     },
-    "enablePullDownRefresh": true,
-    "backgroundTextStyle": "dark"
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "black"
 }

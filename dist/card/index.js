@@ -21,18 +21,6 @@ Component({
         extra: {
             type: String,
             value: ''
-        },
-        logo: {
-            type: String,
-            value: ''
-        },
-        size: {
-            type: String,
-            value: 'default' // small, default, large
-        },
-        shape: {
-            type: String,
-            value: 'square' // square, circle
         }
     }
 });
